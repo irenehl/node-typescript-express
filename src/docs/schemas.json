@@ -1,0 +1,93 @@
+{
+  "Department": {
+    "type": "object",
+    "properties": {
+      "_id": { "type": "string" },
+      "name": { "type": "string" },
+      "location": { "type": "string" }
+    },
+    "required": ["_id", "name", "location"]
+  },
+  "CreateDepartmentDto": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "location": { "type": "string" }
+    },
+    "required": ["name", "location"]
+  },
+  "UpdateDepartmentDto": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "location": { "type": "string" }
+    }
+  },
+  "PaginatedDepartments": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "array",
+        "items": { "$ref": "#/components/schemas/Department" }
+      },
+      "totalPages": {
+        "type": "integer",
+        "description": "Total number of departments available."
+      }
+    },
+    "required": ["items", "totalCount"]
+  },
+  "Employee": {
+    "type": "object",
+    "properties": {
+      "_id": { "type": "string" },
+      "role": { "type": "string" },
+      "fullName": { "type": "string" },
+      "email": { "type": "string" },
+      "phone": { "type": "string" },
+      "startDate": { "type": "string" },
+      "salary": { "type": "number" },
+      "department": { "$ref": "#/components/schemas/Department" }
+    },
+    "required": ["_id", "name", "email", "department"]
+  },
+  "PaginatedEmployees": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "array",
+        "items": { "$ref": "#/components/schemas/Employee" }
+      },
+      "totalPages": {
+        "type": "integer",
+        "description": "Total number of employees available."
+      }
+    },
+    "required": ["items", "totalCount"]
+  },
+  "CreateEmployeeDto": {
+    "type": "object",
+    "properties": {
+      "role": { "type": "string" },
+      "fullName": { "type": "string" },
+      "email": { "type": "string" },
+      "phone": { "type": "string" },
+      "startDate": { "type": "string" },
+      "salary": { "type": "number" },
+      "department": { "type": "string" }
+    },
+    "required": ["role", "fullName", "email", "phone", "startDate", "salary", "department"]
+  },
+  "UpdateEmployeeDto": {
+    "type": "object",
+    "properties": {
+      "role": { "type": "string" },
+      "fullName": { "type": "string" },
+      "email": { "type": "string" },
+      "phone": { "type": "string" },
+      "startDate": { "type": "string" },
+      "salary": { "type": "number" },
+      "department": { "type": "string" }
+    }
+  }
+}

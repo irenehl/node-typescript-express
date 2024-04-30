@@ -9,11 +9,7 @@ const options = {
       version: '1.0.0',
       description: 'This is a simple API protected with an API key'
     },
-    servers: [
-      {
-        url: 'http://localhost:3000'
-      }
-    ],
+    servers: [],
     components: {
       schemas: schemas,
       securitySchemes: {

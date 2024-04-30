@@ -89,5 +89,14 @@
       "salary": { "type": "number" },
       "department": { "type": "string" }
     }
+  },
+  "HealthCheck": {
+    "type": "object",
+    "properties": {
+      "uptime": { "type": "number" },
+      "date": { "type": "string" },
+      "db": { "type": "string" }
+    },
+    "required": ["status"]
   }
 }

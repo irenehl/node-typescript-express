@@ -25,6 +25,22 @@ export function httpLoggerMiddleware(req: Request, res: Response, next: NextFunc
   next();
 }
 
+/**
+ * @openapi
+ * /health:
+ *   get:
+ *     tags:
+ *      - health
+ *     summary: Check the health of the application.
+ *     description: Check the health of the application and database connection.
+ *     responses:
+ *       200:
+ *         description: Employee created successfully.
+ *         content:
+ *          application/json:
+ *           schema:
+ *            $ref: '#/components/schemas/HealthCheck'
+ */
 export async function healthMiddleware(req: Request, res: Response) {
   const db = getDb();
   const ping = await db.command({ ping: 1 });
